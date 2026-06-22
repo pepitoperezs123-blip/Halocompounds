@@ -1,0 +1,8 @@
+git clone --branch claude/practical-keller-ndum32 \
+  https://github.com/tovesblake-max/stillwater-biolabs.git _tmp
+cp -R _tmp/halo-compounds halo-compounds && rm -rf _tmp
+cd halo-compounds
+git init && git add . && git commit -m "Initial commit: Halo Compounds storefront"
+git branch -M main
+git remote add origin https://github.com/tovesblake-max/halo-compounds.git
+git push -u origin main
