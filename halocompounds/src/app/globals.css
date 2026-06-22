@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAF9;
+  --foreground: #15151A;
+  /* One strong brand color — deep indigo. Used for CTAs, links, active states. */
+  --primary: #4338CA;
+  --primary-light: #4F46E5;
+  --primary-foreground: #FFFFFF;
+  /* "Halo" accent — luminous gold, used sparingly for badges and rings. */
+  --halo: #C9A227;
+  --halo-light: #E3C04B;
+  --halo-foreground: #15151A;
+  --accent: #F4F4F2;
+  --accent-foreground: #15151A;
+  --muted: #525252;
+  --muted-foreground: #737373;
+  --border: #E2E2DE;
+  --border-strong: #C8C8C2;
+  --destructive: #DC2626;
+  --success: #059669;
+  --card: #FFFFFF;
+  --card-foreground: #15151A;
+  --footer-bg: #0E0E12;
+  --footer-fg: #E5E5E5;
+  --footer-muted: #8A8A8A;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-halo: var(--halo);
+  --color-halo-light: var(--halo-light);
+  --color-halo-foreground: var(--halo-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-fg: var(--footer-fg);
+  --color-footer-muted: var(--footer-muted);
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-dm-serif);
+  --font-mono: var(--font-dm-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, "Outfit", system-ui, sans-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--accent);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+
+/* Subtle radial "halo" used behind hero content. */
+.halo-glow {
+  background: radial-gradient(
+    60% 60% at 50% 0%,
+    color-mix(in srgb, var(--halo) 22%, transparent),
+    transparent 70%
+  );
+}
